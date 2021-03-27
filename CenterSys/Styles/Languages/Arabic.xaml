@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!--#region  Notification Title-->
+
+    <system:String x:Key="SaveTitle">حفظ</system:String>
+    <system:String x:Key="Warning">تنبيه</system:String>
+    <system:String x:Key="Error">خطأ</system:String>
+    <system:String x:Key="Notice">إشعار</system:String>
+    <system:String x:Key="Message">رسالة</system:String>
+    <!--#endregion -->
+</ResourceDictionary>

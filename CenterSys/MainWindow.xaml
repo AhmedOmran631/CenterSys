@@ -1,0 +1,108 @@
+﻿<dx:ThemedWindow x:Class="CenterSys.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Title="Home" Height="768" Width="1366" SizeToContent="Manual"
+                 WindowStartupLocation="CenterScreen" WindowState="Maximized"
+                 TitleAlignment="Center" WindowKind="Auto" FlowDirection="RightToLeft" FontFamily="Tajawal-Black" FontSize="14">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="614*"/>
+            <ColumnDefinition Width="84*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <dxr:RibbonControl Grid.Row="0" RibbonStyle="Office2010" Grid.ColumnSpan="3" FontSize="14" ToolbarShowMode="Hide" ShowApplicationButton="False" MinimizationButtonVisibility="Auto">
+            <dxr:RibbonControl.ApplicationMenu>
+                <dxr:BackstageViewControl/>
+            </dxr:RibbonControl.ApplicationMenu>
+            <dxr:RibbonControl.ToolbarItems>
+                <dxb:BarButtonItemLink BarItemName="newItem"/>
+            </dxr:RibbonControl.ToolbarItems>
+            <dxr:RibbonDefaultPageCategory>
+                <dxr:RibbonPage Caption="الإستعلامات">
+                    <dxr:RibbonPageGroup  IsCaptionButtonEnabled="False">
+                        <dxb:BarButtonItem x:Name="PatientReservationBtn"  Content="حجز المريض" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=BODetails_32x32.png}" RibbonStyle="Large" ItemClick="PatientReservationBtn_ItemClick" />
+                        <dxb:BarButtonItem  Content="ملف المريض" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=OpenHyperlink_32x32.png}" RibbonStyle="Large"/>
+                        <dxb:BarButtonItem  Content="عمل تحت الإجراء" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=BOTask_32x32.png}" RibbonStyle="Large"/>
+                        <dxb:BarButtonItem  Content="بحث عن مريض" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=FindCustomers_32x32.png}" RibbonStyle="Large"/>
+                        <dxb:BarButtonItem  Content="إرسال نتيجة" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=SendPDF_32x32.png}" RibbonStyle="Large"/>
+                        <dxb:BarButtonItem  Content="نتائج سابقة" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=BO_Resume_32x32.png}" RibbonStyle="Large"/>
+                        <dxb:BarButtonItem  Content="إغلاق خزينة" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=BOChangeHistory_32x32.png}" RibbonStyle="Large"/>
+                        <dxb:BarItemSeparator/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+                <dxr:RibbonPage Caption="الحضور والإنصراف">
+                    <dxr:RibbonPageGroup >
+                        <dxb:BarButtonItem Content="الموظفين" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
+                        <dxb:BarItemSeparator/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+                <dxr:RibbonPage Caption="التقارير">
+                    <dxr:RibbonPageGroup >
+                        <dxb:BarButtonItem Content="New" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
+                        <dxb:BarItemSeparator/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+
+                <dxr:RibbonPage Caption="المرتبات">
+                    <dxr:RibbonPageGroup >
+                        <dxb:BarButtonItem Content="New" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
+                        <dxb:BarItemSeparator/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+
+                <dxr:RibbonPage Caption="المخزن">
+                    <dxr:RibbonPageGroup >
+                        <dxb:BarButtonItem Content="New" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
+                        <dxb:BarItemSeparator/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+
+                <dxr:RibbonPage Caption="الإعدادات">
+                    <dxr:RibbonPageGroup >
+                        <dxb:BarButtonItem x:Name="addAnalyzesViewBut" Content="التحاليل" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=FillBackground_32x32.png}" ItemClick="addAnalyzesViewBut_ItemClick"/>
+                        <dxb:BarButtonItem  x:Name="ParameterViewBut" ItemClick="ParameterViewBut_ItemClick"  Content="الباراميترز" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=FilterByArgument_Chart_32x32.png}"/>
+                        <dxb:BarButtonItem x:Name="AnlysisFamiliesViewBut" ItemClick="AnlysisFamiliesViewBut_ItemClick" Content="عائلات التحاليل" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=PivotTableGroupSelectionContextMenuItem_32x32.png}"/>
+                        <dxb:BarButtonItem x:Name="DeviceViewBut" Content="الأجهزة" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=IDE_32x32.png}" ItemClick="DeviceViewBut_ItemClick"/>
+                        <dxb:BarButtonItem x:Name="SampleViewBut" ItemClick="SampleViewBut_ItemClick" Content="أنواع العينات" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
+                        <dxb:BarButtonItem x:Name="QuickListsViewBut" Content="القوائم السريعه" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}" ItemClick="QuickListsViewBut_ItemClick"/>
+                        <dxb:BarButtonItem x:Name="AddPriceViewBut" Content="الأسعار" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}" ItemClick="AddPriceViewBut_ItemClick"/>
+                        <dxb:BarButtonItem x:Name="AddSourcesViewBut" Content="المصادر" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}" ItemClick="AddSourcesViewBut_ItemClick"/>
+
+                        <dxb:BarItemSeparator/>
+                    </dxr:RibbonPageGroup>
+
+                </dxr:RibbonPage>
+
+                <dxr:RibbonPage Caption="أخرى">
+                    <dxr:RibbonPageGroup >
+                        <dxb:BarButtonItem Content="New" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
+                        <dxb:BarItemSeparator/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+
+            </dxr:RibbonDefaultPageCategory>
+        </dxr:RibbonControl>
+        <dxr:RibbonStatusBarControl Grid.Row="2" Grid.ColumnSpan="3">
+            <dxr:RibbonStatusBarControl.RightItems>
+                <dxb:BarButtonItem x:Name="printItem" Content="Print" Glyph="{dx:DXImage Image=Print_16x16.png}"/>
+            </dxr:RibbonStatusBarControl.RightItems>
+        </dxr:RibbonStatusBarControl>
+        <dx:DXTabControl x:Name="MainTab" Grid.Row="1" Grid.ColumnSpan="3" TabContentCacheMode="CacheTabsOnSelecting" TabAdding="MainTap_TabAdding" SelectionChanged="MainTap_SelectionChanged">
+            <dx:DXTabControl.View>
+                <dx:TabControlScrollView HideButtonShowMode="InAllTabs" NewButtonShowMode="InTabPanel" RemoveTabItemsOnHiding="True" ShowHeaderMenu="False"/>
+            </dx:DXTabControl.View>
+
+
+        </dx:DXTabControl>
+
+    </Grid>
+</dx:ThemedWindow>

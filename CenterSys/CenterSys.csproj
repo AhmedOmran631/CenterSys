@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6666D350-B62E-4C9D-AFF1-9CF4D80583EE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CenterSys</RootNamespace>
+    <AssemblyName>CenterSys</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Data.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Images.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Mvvm.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Office.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Pdf.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Printing.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.RichEdit.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Sparkline.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Utils.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Core.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Docking.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.DocumentViewer.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Grid.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Grid.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Layout.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Layout.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.LayoutControl.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Printing.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Ribbon.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.RichEdit.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.RichEdit.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.MetropolisDark.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.MetropolisDark.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.Office2016Colorful.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016ColorfulSE.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.Office2016ColorfulSE.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.Office2016White.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016WhiteSE.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.Office2016WhiteSE.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2010.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.VS2010.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Blue.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.VS2017Blue.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Light.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpf.Themes.VS2017Light.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.Xpo.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\DevExpress.XtraEditors.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\CenterSys\CenterSys\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\CommunicationModel.cs" />
+    <Compile Include="General\ConfigClass.cs" />
+    <Compile Include="General\RegistryControl.cs" />
+    <Compile Include="Models\GenderModel.cs" />
+    <Compile Include="General\ModelViewBase.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\AnalyzesModels\AnalyzesDevicesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\AnalyzesModels\AnalyzesFamiliesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\AnalyzesModels\AnalyzesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\AnalyzesModels\AnalyzesParametersModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\AnalyzesModels\AnalyzesPricesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\AnalyzesModels\AnalyzesQuickListsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\DevicesModels\DevicesErrorMessagesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\DevicesModels\DevicesFilesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\DevicesModels\DevicesMaintenancesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\DevicesModels\DevicesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\DevicesModels\DevicesPremissionsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\FamiliesModels\FamilyModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\InstitutesModels\SourceAnalyzesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\InstitutesModels\SourceContactsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\InstitutesModels\SourceContractsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\InstitutesModels\SourceEmployeeModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\InstitutesModels\SourceInfoModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\InstitutesModels\SourceModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\ParametersModels\ParametersDevicesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\ParametersModels\ParametersModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\ParametersModels\ParametersOptionsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\ParametersModels\ParametersRangsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\ParametersModels\ParametersReportsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\PricesModels\PricesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\QuickListModels\QuickListModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SamplesModels\SamplesAnalyzesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SamplesModels\SamplesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SamplesModels\SamplesTakeMethodsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SourcesModels\SourcesAnalyzesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SourcesModels\SourcesContactsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SourcesModels\SourcesContractsModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SourcesModels\SourcesEmployeesModel.cs" />
+    <Compile Include="Models\LaboratoryModels\SettingModels\SourcesModels\SourcesModel.cs" />
+    <Compile Include="Models\RangStateModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\AnalyzesViweModels\AnalyzesDevicesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\AnalyzesViweModels\AnalyzesFamiliesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\AnalyzesViweModels\AnalyzesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\AnalyzesViweModels\AnalyzesParametersViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\AnalyzesViweModels\AnalyzesPricesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\AnalyzesViweModels\AnalyzesQuickListsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\DevicesViweModels\DevicesErrorMessagesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\DevicesViweModels\DevicesFilesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\DevicesViweModels\DevicesMaintenancesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\DevicesViweModels\DevicesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\DevicesViweModels\DevicesPremissionsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\FamiliesViweModels\FamilyViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\InstitutesViweModels\SourceAnalyzesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\InstitutesViweModels\SourceContactsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\InstitutesViweModels\SourceContractsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\InstitutesViweModels\SourceEmployeeViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\InstitutesViweModels\SourceInfoViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\InstitutesViweModels\SourceViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\ParametersViweModels\ParametersDevicesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\ParametersViweModels\ParametersViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\ParametersViweModels\ParametersOptionsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\ParametersViweModels\ParametersRangsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\ParametersViweModels\ParametersReportsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\PricesViweModels\PricesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\QuickListViweModels\QuickListViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SamplesViweModels\SamplesAnalyzesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SamplesViweModels\SamplesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SamplesViweModels\SamplesTakeMethodsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SourcesViweModels\SourcesAnalyzesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SourcesViweModels\SourcesContactsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SourcesViweModels\SourcesContractsViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SourcesViweModels\SourcesEmployeesViweModel.cs" />
+    <Compile Include="ViweModels\LaboratoryViweModels\SettingViweModels\SourcesViweModels\SourcesViweModel.cs" />
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\AnalyzesComponent\addAnalyzesView.xaml.cs">
+      <DependentUpon>addAnalyzesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\AnalyzesFamiliesComponent\addAnalysisFamilies.xaml.cs">
+      <DependentUpon>addAnalysisFamilies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\DevicesComponent\addDeviceView.xaml.cs">
+      <DependentUpon>addDeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\ParameterComponent\addParameterView.xaml.cs">
+      <DependentUpon>addParameterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\PatientReservation\PatientReservationView.xaml.cs">
+      <DependentUpon>PatientReservationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\PriceComponent\AddPriceView.xaml.cs">
+      <DependentUpon>AddPriceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\PriceComponent\ShowPriceView.xaml.cs">
+      <DependentUpon>ShowPriceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\QuickListsComponent\addQuickListsView.xaml.cs">
+      <DependentUpon>addQuickListsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\SamplesComponent\addSampleView.xaml.cs">
+      <DependentUpon>addSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\SearchInterfaces\ParameterSearch.xaml.cs">
+      <DependentUpon>ParameterSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\SourcesComponent\AddSourcesView.xaml.cs">
+      <DependentUpon>AddSourcesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LaboratoryViwes\SettingViwes\SourcesComponent\View8.xaml.cs">
+      <DependentUpon>View8.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Fonts\LabFont.ttf" />
+    <Resource Include="Resources\Fonts\Tajawal-Black.ttf" />
+    <Resource Include="Resources\Fonts\Tajawal-Bold.ttf" />
+    <Resource Include="Resources\Fonts\Tajawal-ExtraBold.ttf" />
+    <Resource Include="Resources\Fonts\Tajawal-ExtraLight.ttf" />
+    <Resource Include="Resources\Fonts\Tajawal-Light.ttf" />
+    <Resource Include="Resources\Fonts\Tajawal-Medium.ttf" />
+    <Resource Include="Resources\Fonts\Tajawal-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ButtonsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ColorsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DataTemplatesStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\GridsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\IconResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Languages\Arabic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\TextStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\AnalyzesComponent\addAnalyzesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\AnalyzesFamiliesComponent\addAnalysisFamilies.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\DevicesComponent\addDeviceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\ParameterComponent\addParameterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\PatientReservation\PatientReservationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\PriceComponent\AddPriceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\PriceComponent\ShowPriceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\QuickListsComponent\addQuickListsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\SamplesComponent\addSampleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\SearchInterfaces\ParameterSearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\SourcesComponent\AddSourcesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Viwes\LaboratoryViwes\SettingViwes\SourcesComponent\View8.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

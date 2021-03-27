@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:local="clr-namespace:CenterSys"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!--#region fontFamilies-->
+    <FontFamily x:Key="Tajawal-Regular">pack://application;,,,/Resources/Fonts/#Tajawal</FontFamily>
+    <FontFamily x:Key="Tajawal-Light">pack://application;,,,/Resources/Fonts/#Tajawal Light</FontFamily>
+    <FontFamily x:Key="Tajawal-Medium">pack://application;,,,/Resources/Fonts/#Tajawal-Medium</FontFamily>
+    <FontFamily x:Key="Tajawal-ExtraLight">pack://application;,,,/Resources/Fonts/#Tajawal ExtraLight</FontFamily>
+    <FontFamily x:Key="Tajawal-ExtraBold">pack://application;,,,/Resources/Fonts/#Tajawal ExtraBold</FontFamily>
+    <FontFamily x:Key="Tajawal-Bold">pack://application;,,,/Resources/Fonts/#Tajawal-Bold</FontFamily>
+    <FontFamily x:Key="Tajawal-Black">pack://application;,,,/Resources/Fonts/#Tajawal Black</FontFamily>
+    <FontFamily x:Key="IconFont">pack://application;,,,/Resources/Fonts/#LabFont</FontFamily>
+    <!--#endregion-->
+    <!--#region fontSize-->
+    <system:Double x:Key="FontSizeXXSmall">8</system:Double>
+    <system:Double x:Key="FontSizeXSmall">10</system:Double>
+    <system:Double x:Key="FontSizeSmall">12</system:Double>
+    <system:Double x:Key="FontSizeRegular">14</system:Double>
+    <system:Double x:Key="FontSizeLarge">16</system:Double>
+    <system:Double x:Key="FontSizeXlarge">18</system:Double>
+    <system:Double x:Key="FontSize2Xlarge">20</system:Double>
+    <system:Double x:Key="FontSize3Xlarge">22</system:Double>
+    <system:Double x:Key="FontSize4Xlarge">24</system:Double>
+    <system:Double x:Key="FontSize5Xlarge">28</system:Double>
+    <system:Double x:Key="FontSize6Xlarge">36</system:Double>
+    <system:Double x:Key="FontSize7Xlarge">48</system:Double>
+    <!--#endregion-->
+    <!--#region based used font in controlers-->
+    <Style x:Key="BasedFont" TargetType="{x:Type Control}">
+        <Setter Property="FontFamily" Value="{StaticResource Tajawal-Regular}" ></Setter>
+    </Style>
+    <Style  TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="{StaticResource Tajawal-Regular}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}"/>
+    </Style>
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BasedFont}"/>
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BasedFont}">
+        <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}"/>
+    </Style>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BasedFont}"/>
+    <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource BasedFont}"/>
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource BasedFont}"/>
+     <!--#endregion-->
+    <Style x:Key="BigIcon" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource IconFont}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize6Xlarge}"/>
+        <Setter Property="Margin" Value="15"/>
+        <!-- <Setter Property="Width" Value="{Binding ActualHeight,RelativeSource={RelativeSource Self}}"/>-->
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Text" Value="{Binding}"/>
+    </Style>
+    <Style x:Key="TitleText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Tajawal-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize4Xlarge}"/>
+        <Setter Property="Margin" Value="15"/>
+        <!-- <Setter Property="Width" Value="{Binding ActualHeight,RelativeSource={RelativeSource Self}}"/>-->
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Text" Value="{Binding}"/>
+    </Style>
+
+</ResourceDictionary>

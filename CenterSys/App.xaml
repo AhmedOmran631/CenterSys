@@ -1,0 +1,20 @@
+﻿<Application x:Class="CenterSys.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="IconText" Source="Styles/IconResources.xaml"/>
+                <ResourceDictionary x:Name="Text" Source="Styles/Languages/Arabic.xaml"/>
+                <ResourceDictionary x:Name="ColorsStyle" Source="Styles/ColorsStyle.xaml"/>
+                <ResourceDictionary x:Name="TextStyle" Source="Styles/TextStyle.xaml"/>
+                <ResourceDictionary x:Name="DataTemplatesStyle" Source="Styles/DataTemplatesStyle.xaml"/>
+                <ResourceDictionary x:Name="ButtonsStyle" Source="Styles/ButtonsStyle.xaml"/>
+
+                <ResourceDictionary x:Name="GridsStyle" Source="Styles/GridsStyle.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

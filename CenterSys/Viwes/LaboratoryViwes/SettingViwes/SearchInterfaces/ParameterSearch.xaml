@@ -1,0 +1,54 @@
+﻿<dx:ThemedWindow
+    x:Class="CenterSys.ParameterSearch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    Title="بحث" FlowDirection="RightToLeft" Height="500" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Topmost="True" ShowInTaskbar="False" WindowStyle="ThreeDBorderWindow" ShowIcon="False" ShowActivated="False" ShowGlow="False" TitleAlignment="Center" WindowKind="Normal" ShowTitle="True"  
+    >
+
+    <Grid>
+        <dxg:GridControl  HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" SelectionMode="Row" x:Name="GridContolAll"  >
+            <dxg:GridControl.View>
+                <dxg:TableView  FontSize="18" ShowGroupPanel="False" ShowSearchPanelNavigationButtons="True" ShowSearchPanelMRUButton="True"  ShowSearchPanelFindButton="True" ShowSearchPanelCloseButton="False" ShowSearchPanelMode="Always"   />
+            </dxg:GridControl.View>
+            <dxg:GridColumn Header="م"  Width="15" ReadOnly="True">
+                <dxg:GridColumn.HeaderStyle>
+                    <Style TargetType="{x:Type Control}">
+                        <Setter Property="Background" Value="#FF2189F9"/>
+                        <Setter Property="Foreground" Value="White"/>
+
+                    </Style>
+                </dxg:GridColumn.HeaderStyle>
+            </dxg:GridColumn>
+            <dxg:GridColumn Header="رمز الباراميتر" HorizontalHeaderContentAlignment="Center" FieldName="ParameterCode"  ReadOnly="True">
+                <dxg:GridColumn.HeaderStyle>
+                    <Style TargetType="{x:Type Control}">
+                        <Setter Property="Background" Value="#FF2189F9"/>
+                        <Setter Property="Foreground" Value="White"/>
+
+                    </Style>
+                </dxg:GridColumn.HeaderStyle>
+            </dxg:GridColumn>
+            <dxg:GridColumn  Header="اسم الباراميتر" Width="*" HorizontalHeaderContentAlignment="Center" FieldName="ParameterName"  ReadOnly="True">
+                <dxg:GridColumn.HeaderStyle>
+                    <Style TargetType="{x:Type Control}">
+                        <Setter Property="Background" Value="#FF2189F9"/>
+                        <Setter Property="Foreground" Value="White"/>
+
+                    </Style>
+                </dxg:GridColumn.HeaderStyle>
+            </dxg:GridColumn>
+            <dxg:GridColumn Header="الفاعلية" HorizontalHeaderContentAlignment="Center" FieldName="IsActive"  ReadOnly="True" >
+                <dxg:GridColumn.HeaderStyle>
+                    <Style TargetType="{x:Type Control}">
+                        <Setter Property="Background" Value="#FF2189F9"/>
+                        <Setter Property="Foreground" Value="White"/>
+
+                    </Style>
+                </dxg:GridColumn.HeaderStyle>
+            </dxg:GridColumn>
+        </dxg:GridControl>
+
+
+    </Grid>
+</dx:ThemedWindow>

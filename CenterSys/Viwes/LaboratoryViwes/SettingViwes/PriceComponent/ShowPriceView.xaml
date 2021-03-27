@@ -1,0 +1,284 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="CenterSys.ShowPriceView"
+             mc:Ignorable="d"
+             d:DesignHeight="768" d:DesignWidth="1366" FlowDirection="RightToLeft" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <!-- The Header Row 0 -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Text="رقم الطلب" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"  Text="202015-2521" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Text="رقم الملف" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"  Text="2521" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Text="اسم المريض" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"  Text="محمد محمد محمد" />
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- The Table Row 1 -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <dxg:GridControl AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <dxg:GridControl.View>
+                    <dxg:TableView FontSize="18" ShowGroupPanel="False" ShowSearchPanelNavigationButtons="True" ShowSearchPanelMRUButton="True"   ShowSearchPanelFindButton="True" ShowSearchPanelCloseButton="False" ShowSearchPanelMode="Always" />
+                </dxg:GridControl.View>
+                <dxg:GridColumn Header=""  Width="35">
+                    <dxg:GridColumn.HeaderStyle>
+                        <Style TargetType="{x:Type Control}">
+                            <Setter Property="Background" Value="#FF2189F9"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </dxg:GridColumn.HeaderStyle>
+                </dxg:GridColumn>
+                <dxg:GridColumn Header="كود التحليل"  HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.HeaderStyle>
+                        <Style TargetType="{x:Type Control}">
+                            <Setter Property="Background" Value="#FF2189F9"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </dxg:GridColumn.HeaderStyle>
+                </dxg:GridColumn>
+                <dxg:GridColumn Header="اسم التحليل العلمي" Width="*"  HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.HeaderStyle>
+                        <Style TargetType="{x:Type Control}">
+                            <Setter Property="Background" Value="#FF2189F9"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </dxg:GridColumn.HeaderStyle>
+                </dxg:GridColumn>
+                <dxg:GridColumn Header="السعر"  HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.HeaderStyle>
+                        <Style TargetType="{x:Type Control}">
+                            <Setter Property="Background" Value="#FF2189F9"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </dxg:GridColumn.HeaderStyle>
+                </dxg:GridColumn>
+            </dxg:GridControl>
+        </Grid>
+
+        <!-- The button Row 2 -->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <dx:SimpleButton Content="التالية" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="100"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <dx:SimpleButton Content="التالية" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="100"/>
+            </Grid>
+        </Grid>
+        
+        <!-- The Last Grid Row 3 -->
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="الإجمالي"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0.15*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <dxe:TextEdit  HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="35" Width="250"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock Text="دينار"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Grid>
+                    
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="طريقة الدفع"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:ComboBoxEdit VerticalAlignment="Center" HorizontalAlignment="Stretch"  Height="35" Width="300"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="رقم الحساب"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:TextEdit   HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="35" Width="300"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="المصرف"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:TextEdit   HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="35" Width="300"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="المدفوع"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:TextEdit   HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="35" Width="300"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBlock Text="دينار"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <dx:SimpleButton Content="خالص"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="100"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="التخفيض"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:TextEdit   HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="35" Width="300"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBlock Text="دينار"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="الباقي"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:TextEdit   HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="35" Width="300"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBlock Text="دينار"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="الأجل"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:TextEdit   HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="35" Width="300"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <TextBlock Text="دينار"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</UserControl>

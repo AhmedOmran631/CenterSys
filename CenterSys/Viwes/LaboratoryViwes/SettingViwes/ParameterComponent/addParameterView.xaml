@@ -1,0 +1,614 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:local="clr-namespace:CenterSys"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+            xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+            x:Class="CenterSys.addParameterView"
+             mc:Ignorable="d"
+             d:DesignHeight="768" d:DesignWidth="1366">
+    <UserControl.Resources>
+        <dxre:RtfToContentConverter x:Key="rtfToContentConverter" />
+
+    </UserControl.Resources>
+
+    <Grid FlowDirection="RightToLeft" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock  Grid.Row="0" Grid.Column="0" Text=" رمز الباراميتر" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="اسم الباراميتر" HorizontalAlignment="Center" FontSize="12" VerticalAlignment="Center" />
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="نوع الادخال" HorizontalAlignment="Center" FontSize="12" VerticalAlignment="Center" />
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="وحدة القياس " HorizontalAlignment="Center"  FontSize="12" VerticalAlignment="Center" />
+                <!--<TextBlock  Grid.Row="4" Grid.Column="0" Text="وجدة القياس الفرعية" HorizontalAlignment="Center"  FontSize="12" VerticalAlignment="Center" />-->
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="110"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <StackPanel Orientation="Horizontal">
+                            <dxe:TextEdit x:Name="ParameterCodeTxt" Text="{Binding ParameterCode,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="25" Width="100" >
+                             
+                            </dxe:TextEdit>
+                            <dx:SimpleButton x:Name="SearchBut"   Style="{StaticResource SearchBtnStyle}" VerticalAlignment="Center" HorizontalAlignment="Left"  />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxe:CheckEdit x:Name="IsActiveCheck" IsChecked="True" EditValue="{Binding IsActive,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="الفاعلية" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Height="35"  />
+                    </Grid>
+                </Grid>
+
+                <dxe:TextEdit x:Name="ParameterNameTxt" Text="{Binding ParameterName,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="25" />
+
+                <dxe:ComboBoxEdit x:Name="ParameterInputCmb" SelectedIndex="{Binding ParameterInput,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="25"  >
+                    <dxe:ComboBoxEditItem Content="نص" />
+                    <dxe:ComboBoxEditItem Content="خيارات" />
+                    <dxe:ComboBoxEditItem Content="تقرير" />
+                    <dxe:ComboBoxEditItem Content="رقم صحيح" />
+                    <dxe:ComboBoxEditItem Content="رقم عشري" />
+
+                </dxe:ComboBoxEdit>
+
+                <dxre:RichEditControl FlowDirection="LeftToRight"  
+                                      x:Name="MeasuringUnitRTxt" 
+                                      Grid.Row="3" Grid.Column="1"   
+                                      CommandBarStyle="Empty" 
+                                      ActiveViewType="Simple"   
+                      HorizontalAlignment="Left" 
+                     VerticalAlignment="Stretch" Width="200"
+                                         IsCaretVisible="False"  
+                        
+                                       VerticalScrollBarVisibility="Collapsed" 
+                                      HorizontalScrollBarVisibility="Collapsed" Content="{Binding MeasuringUnit,Converter={StaticResource rtfToContentConverter}, Mode=TwoWay}" 
+                                        DocumentSource="{Binding MeasuringUnit}"
+                                      >
+                </dxre:RichEditControl>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75"/>
+
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="الوصف" HorizontalAlignment="Center"  TextWrapping="Wrap"  VerticalAlignment="Top"/>
+
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <dxre:RichEditControl FlowDirection="LeftToRight"  
+                                      x:Name="DescrptionRTxt" 
+                                       
+                                      CommandBarStyle="Empty" 
+                                      ActiveViewType="Simple"   
+                      HorizontalAlignment="Stretch" 
+                     VerticalAlignment="Stretch" 
+                                         IsCaretVisible="False"  
+                        
+                                       VerticalScrollBarVisibility="Collapsed" 
+                                      HorizontalScrollBarVisibility="Collapsed" Content="{Binding Descrption,Converter={StaticResource rtfToContentConverter}, Mode=TwoWay}" 
+                                        DocumentSource="{Binding Descrption}" >
+                        </dxre:RichEditControl>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="1.5*" />
+
+
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.8*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="25" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock  Grid.Row="0" Grid.Column="0" Text=" يظهر على الشاشة" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock Grid.Row="1" Grid.Column="0" Text=" يظهر في التقرير" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                <dxe:CheckEdit x:Name="OnScreenCheck"  IsChecked="True" EditValue="{Binding OnScreen,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Stretch"  Height="35" />
+                <dxe:CheckEdit x:Name="OnReportCheck"  IsChecked="True" EditValue="{Binding OnReport,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Stretch"  Height="35" />
+               
+
+                <Border Grid.Row="3" BorderBrush="#FFBAABAB" BorderThickness="0.5" Grid.Column="1" HorizontalAlignment="Stretch"  Grid.ColumnSpan="2" Height="55" VerticalAlignment="Center" />
+
+                <dx:SimpleButton x:Name="DeleteBut"  Grid.Row="4" Grid.Column="2"  Style="{StaticResource DeleteBtnStyle}"   VerticalAlignment="Center"  />
+                <dx:SimpleButton x:Name="SaveBut"   Grid.Row="4" Grid.Column="1"  Style="{StaticResource SaveBtnStyle}" VerticalAlignment="Center" Click="SaveBut_Click" />
+
+
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <dx:DXTabControl  HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Stretch">
+                <dx:DXTabItem Header="المعدلات" Width="200" HorizontalContentAlignment="Center" >
+                    <Grid Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0"  >
+                            <Grid.Background>
+                                <SolidColorBrush Color="#FF87D6FF" Opacity="0.44"/>
+                            </Grid.Background>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="75"/>
+                                <RowDefinition Height="95"/>
+                                <RowDefinition Height="250"/>
+                                <RowDefinition Height="*"/>
+
+                                <RowDefinition Height="5"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="1"  HorizontalAlignment="Center"  VerticalAlignment="Center" Text="الجنس"/>
+                                <!--<dxg:LookUpEdit  x:Name="GenderCmb"  Grid.Column="2" 
+                                                 HorizontalAlignment="Center"  VerticalAlignment="Stretch" Width="325" Height="25" Margin="0,25,25,25" DisplayMember="Gender"
+                                                  AutoPopulateColumns="False"
+                        AutoComplete="True"
+                        IncrementalFiltering="True"
+                        ImmediatePopup="True"
+                        IsPopupAutoWidth="True" ValueMember="GenderCode" SelectedIndexChanged="GenderCmb_SelectedIndexChanged"
+                                                 >
+                                    <dxg:LookUpEdit.PopupContentTemplate>
+                                        <ControlTemplate>
+                                            <dxg:GridControl Name="PART_GridControl">
+                                                <dxg:GridControl.Columns>
+                                                    <dxg:GridColumn FieldName="GenderCode" Visible="False" />
+                                                    <dxg:GridColumn FieldName="Gender" Header="الجنس" />
+
+                                                </dxg:GridControl.Columns>
+                                                <dxg:GridControl.View>
+                                                    <dxg:TableView AutoWidth="True" />
+                                                </dxg:GridControl.View>
+                                            </dxg:GridControl>
+                                        </ControlTemplate>
+                                    </dxg:LookUpEdit.PopupContentTemplate>
+                                </dxg:LookUpEdit>-->
+
+
+
+
+                            </Grid>
+
+                            <Grid Width="250" Grid.Row="1"  Height="95">
+
+                                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock  Text=" العمر " HorizontalAlignment="Center" VerticalAlignment="Stretch"  TextAlignment="Center" Margin="5"  Grid.Row="0"   />
+                                    <Grid  Grid.Row="1" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock Text="من" HorizontalAlignment="Right" Margin="0,0,20,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <dxe:TextEdit x:Name="FromAgeTxt" HorizontalAlignment="Stretch"  Height="25"  TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" />
+
+
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <TextBlock Text="الى" HorizontalAlignment="Right" Margin="0,0,20,0" VerticalAlignment="Center" />
+                                        </Grid>
+
+                                        <Grid Grid.Column="3">
+                                            <dxe:TextEdit x:Name="ToAgeTxt" HorizontalAlignment="Stretch" Height="25"   TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="50" />
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+                            <Grid Width="350" Grid.Row="2"  Height="175" >
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="المعدل" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <Grid Grid.Row="1" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50*"/>
+                                                <ColumnDefinition Width="50*"/>
+                                                <ColumnDefinition Width="50*"/>
+                                                <ColumnDefinition Width="50*"/>
+                                                <ColumnDefinition Width="49*"/>
+                                                <ColumnDefinition Width="50*"/>
+                                                <ColumnDefinition Width="41*"/>
+                                                <ColumnDefinition Width="8*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock Grid.Column="0" Text="من" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="17,18,17,17" />
+                                            <dxe:TextEdit x:Name="MiniLimitTxt" Grid.Column="1"  HorizontalAlignment="Center" Height="24"   TextWrapping="Wrap"  VerticalAlignment="Center"  Width="50" Margin="0,14"  />
+
+
+                                            <dxe:ComboBoxEdit x:Name="EquationCmb" Grid.Column="2" Height="24" HorizontalAlignment="Center"  VerticalAlignment="Center"  Width="65" Grid.ColumnSpan="3" Margin="38,14,37,14"  >
+                                                <!--<dxe:ComboBoxEditItem Content="<" />-->
+                                                <dxe:ComboBoxEditItem Content=">" />
+                                                <dxe:ComboBoxEditItem Content="-" />
+                                                <dxe:ComboBoxEditItem Content=">=" />
+                                                <!--<dxe:ComboBoxEditItem Content="<=" />-->
+
+                                            </dxe:ComboBoxEdit>
+
+
+
+                                            <TextBlock Grid.Column="4" Text="إلي" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="17,18,17,17"  />
+                                            <dxe:TextEdit x:Name="MaxLimitTxt" Grid.Column="5"  HorizontalAlignment="Center" Height="24"   TextWrapping="Wrap"  VerticalAlignment="Center" Width="50" Margin="0,14"   />
+
+
+
+
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+
+                                            <dxe:TextEdit x:Name="RangTxt"    HorizontalAlignment="Center"  VerticalAlignment="Center" Width="250" />
+                                        </Grid>
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="6*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock  Grid.Column="0" Text="الحالة" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                                            <dxg:LookUpEdit  x:Name="RangStateCmb" Grid.Column="1"   HorizontalAlignment="Left"  VerticalAlignment="Center" Width="250"
+                                                             DisplayMember="State"
+                                                  AutoPopulateColumns="False"
+                        AutoComplete="True"
+                        IncrementalFiltering="True"
+                        ImmediatePopup="True"
+                        IsPopupAutoWidth="True" ValueMember="StateCode" 
+                                                 >
+
+                                                <dxg:LookUpEdit.PopupContentTemplate>
+                                                    <ControlTemplate>
+                                                        <dxg:GridControl Name="PART_GridControl" >
+                                                            <dxg:GridControl.Columns>
+                                                                <dxg:GridColumn FieldName="StateCode" Visible="False" />
+                                                                <dxg:GridColumn FieldName="State" Header="الحالة" />
+
+                                                            </dxg:GridControl.Columns>
+                                                            <dxg:GridControl.View>
+                                                                <dxg:TableView AutoWidth="True" />
+                                                            </dxg:GridControl.View>
+                                                        </dxg:GridControl>
+                                                    </ControlTemplate>
+                                                </dxg:LookUpEdit.PopupContentTemplate>
+                                            </dxg:LookUpEdit>
+
+
+                                        </Grid>
+
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+
+
+
+
+
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <dx:SimpleButton x:Name="RSaveBut" Style="{StaticResource SaveBtnStyle}"  Grid.Column="1" />
+                                <dx:SimpleButton x:Name="NewBut" Style="{StaticResource NewBtnStyle}" Grid.Column="2" />
+                            </Grid>
+
+
+                        </Grid>
+                        <Grid Grid.Column="1"  >
+                            <dxg:GridControl x:Name="parameterRangGrid"  AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True"  VerticalAlignment="Stretch" Margin="15" HorizontalAlignment="Stretch">
+                                <dxg:GridControl.View>
+                                    <dxg:TableView FontSize="18" ShowGroupPanel="False" ShowSearchPanelNavigationButtons="True" ShowSearchPanelMRUButton="True"   ShowSearchPanelFindButton="True" ShowSearchPanelCloseButton="False" ShowSearchPanelMode="Always" />
+                                </dxg:GridControl.View>
+
+
+                                <dxg:GridColumn FieldName="ParameterId" Visible="False"  Width="155" HorizontalHeaderContentAlignment="Center" Header="الجنس">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="RangId" Visible="False"  Width="155" HorizontalHeaderContentAlignment="Center" Header="الجنس">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="GenderCode" Visible="False"  Width="155" HorizontalHeaderContentAlignment="Center" Header="الجنس">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="StateCode" Visible="False"  Width="155" HorizontalHeaderContentAlignment="Center" Header="الجنس">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="Equation" Visible="False"  Width="155" HorizontalHeaderContentAlignment="Center" Header="الجنس">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+
+                                <dxg:GridColumn FieldName="Gender"  Width="155" HorizontalHeaderContentAlignment="Center" Header="الجنس" SortOrder="Ascending" SortIndex="0">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxg:LookUpEditSettings  x:Name="GenderCmb"    DisplayMember="Gender"
+                                                  AutoPopulateColumns="False"
+                        AutoComplete="True"
+                        IncrementalFiltering="True"
+                        ImmediatePopup="True"
+                        IsPopupAutoWidth="True" ValueMember="GenderCode" 
+                                           IsTextEditable="True"                      
+                                                 >
+                                            <dxg:LookUpEditSettings.PopupContentTemplate>
+                                                <ControlTemplate>
+                                                    <dxg:GridControl Name="PART_GridControl">
+                                                        <dxg:GridControl.Columns>
+                                                            <dxg:GridColumn FieldName="GenderCode" Visible="False" />
+                                                            <dxg:GridColumn FieldName="Gender" Header="الجنس" />
+
+                                                        </dxg:GridControl.Columns>
+                                                        <dxg:GridControl.View>
+                                                            <dxg:TableView AutoWidth="True" />
+                                                        </dxg:GridControl.View>
+                                                    </dxg:GridControl>
+                                                </ControlTemplate>
+                                            </dxg:LookUpEditSettings.PopupContentTemplate>
+                                        </dxg:LookUpEditSettings>
+
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="FromAge" Width="155" HorizontalHeaderContentAlignment="Center" Header="من العمر" UnboundType="Integer">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="ToAge" Width="*" HorizontalHeaderContentAlignment="Center" Header="الى العمر" UnboundType="Integer">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="MiniLimit" Width="*" HorizontalHeaderContentAlignment="Center" Header="الحد الادنى" UnboundType="Decimal">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="MaxLimit" Width="*" HorizontalHeaderContentAlignment="Center" Header="الحد الاعلى" UnboundType="Decimal">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn FieldName="Rang" Width="*" HorizontalHeaderContentAlignment="Center" Header="المعدل" UnboundType="String">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+
+                                <dxg:GridColumn FieldName="RangState" Width="*" HorizontalHeaderContentAlignment="Center" Header="حالة المعدل" UnboundType="String">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn   Width="75"  ShowInColumnChooser="False" TabStop="False"  AllowEditing="False"  FixedWidth="True" AllowSorting="False" AllowMoving="False" AllowGrouping="False" AllowFocus="False" AllowAutoFilter="False" AllowColumnFiltering="False" AutoFilterCondition="Like">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                    <dxg:GridColumn.CellTemplate>
+                                        <DataTemplate>
+
+                                            <dx:SimpleButton HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="60"  Style="{StaticResource SaveBtnStyle}"   />
+
+                                        </DataTemplate>
+                                    </dxg:GridColumn.CellTemplate>
+                                </dxg:GridColumn>
+                                <dxg:GridColumn   Width="75"  ShowInColumnChooser="False" TabStop="False"  AllowEditing="False"  FixedWidth="True" AllowSorting="False" AllowMoving="False" AllowGrouping="False" AllowFocus="False" AllowAutoFilter="False" AllowColumnFiltering="False" AutoFilterCondition="Like">
+                                    <dxg:GridColumn.HeaderStyle>
+                                        <Style TargetType="Control">
+                                            <Setter Property="Background" Value="#FF2189F9"/>
+                                            <Setter Property="Foreground" Value="White"/>
+
+                                        </Style>
+                                    </dxg:GridColumn.HeaderStyle>
+                                    <dxg:GridColumn.CellTemplate>
+                                        <DataTemplate>
+
+                                            <dx:SimpleButton HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="60" Style="{StaticResource DeleteBtnStyle}"   />
+
+                                        </DataTemplate>
+                                    </dxg:GridColumn.CellTemplate>
+                                </dxg:GridColumn>
+
+
+                            </dxg:GridControl>
+                            <dx:SimpleButton Content="جديد" Style="{StaticResource NewBtnStyle}" HorizontalAlignment="Right" Margin="25"   VerticalAlignment="Top" />
+
+                        </Grid>
+                    </Grid>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="خيارات" Width="200" HorizontalContentAlignment="Center" Height="22" VerticalAlignment="Top">
+                    <Grid Background="Transparent">
+
+                        <dxg:GridControl x:Name="ParameterOptionsGrid" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True"  VerticalAlignment="Stretch" Margin="25" HorizontalAlignment="Stretch">
+                            <dxg:GridControl.View>
+                                <dxg:TableView FontSize="18" ShowGroupPanel="False" ShowSearchPanelNavigationButtons="True" ShowSearchPanelMRUButton="True"   ShowSearchPanelFindButton="True" ShowSearchPanelCloseButton="False" ShowSearchPanelMode="Always" />
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="م" Width="15">
+                                <dxg:GridColumn.HeaderStyle>
+                                    <Style TargetType="Control">
+                                        <Setter Property="Background" Value="#FF2189F9"/>
+                                        <Setter Property="Foreground" Value="White"/>
+
+                                    </Style>
+                                </dxg:GridColumn.HeaderStyle>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="الاختيار" Width="1.5*" HorizontalHeaderContentAlignment="Center">
+                                <dxg:GridColumn.HeaderStyle>
+                                    <Style TargetType="Control">
+                                        <Setter Property="Background" Value="#FF2189F9"/>
+                                        <Setter Property="Foreground" Value="White"/>
+
+                                    </Style>
+                                </dxg:GridColumn.HeaderStyle>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="الفاعلية"  Width="*" HorizontalHeaderContentAlignment="Center">
+                                <dxg:GridColumn.HeaderStyle>
+                                    <Style TargetType="Control">
+                                        <Setter Property="Background" Value="#FF2189F9"/>
+                                        <Setter Property="Foreground" Value="White"/>
+
+                                    </Style>
+                                </dxg:GridColumn.HeaderStyle>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="تعديل" Width="*" HorizontalHeaderContentAlignment="Center">
+                                <dxg:GridColumn.HeaderStyle>
+                                    <Style TargetType="Control">
+                                        <Setter Property="Background" Value="#FF2189F9"/>
+                                        <Setter Property="Foreground" Value="White"/>
+
+                                    </Style>
+                                </dxg:GridColumn.HeaderStyle>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn FieldName="حذف " Width="*" HorizontalHeaderContentAlignment="Center">
+                                <dxg:GridColumn.HeaderStyle>
+                                    <Style TargetType="Control">
+                                        <Setter Property="Background" Value="#FF2189F9"/>
+                                        <Setter Property="Foreground" Value="White"/>
+
+                                    </Style>
+                                </dxg:GridColumn.HeaderStyle>
+                            </dxg:GridColumn>
+                        </dxg:GridControl>
+
+                    </Grid>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="عرض التقرير" Width="200" HorizontalContentAlignment="Center">
+                    <Grid Background="Transparent" FlowDirection="RightToLeft">
+                        <dxre:RichEditControl x:Name="ReportRtf" FlowDirection="LeftToRight" CommandBarStyle="Empty" HorizontalAlignment="Center" VerticalAlignment="Stretch"  />
+                    </Grid>
+                </dx:DXTabItem>
+            </dx:DXTabControl>
+
+        </Grid>
+
+
+    </Grid>
+
+</UserControl>
+
